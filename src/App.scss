@@ -1,0 +1,39 @@
+.app {
+  &__bg {
+    z-index: 0;
+    position: fixed;
+    width: 30vw;
+    height: 30vh;
+    filter: blur(16vw);
+    pointer-events: none;
+    animation: pulsate-bck 8s ease-in-out infinite both;
+    inset: 0%;
+
+    &--1 {
+      background-color: #8685ef;
+      inset: 0%;
+    }
+
+    &--2 {
+      inset: 10%;
+      animation-delay: 4s;
+      background-color: #7fd1ae;
+    }
+  }
+
+  * {
+    z-index: 1;
+  }
+}
+
+@keyframes pulsate-bck {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.5) translateY(10vh) translateX(20vw);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
